@@ -12,7 +12,7 @@ module Warden
           if File.exists?(ca_file)
             { :ca_file => ca_file }
           else
-            { :ca_file => ''}
+            { :ca_file => nil}
           end
         end
 
