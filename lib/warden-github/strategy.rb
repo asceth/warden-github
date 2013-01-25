@@ -54,7 +54,7 @@ Warden::Strategies.add(:github) do
   end
 
   def user_info_for(token)
-    @user_info ||= RestClient.get("https://api.github.com/user", :params => {:access_token => token})
+    @user_info ||= RestClient.get("#{env['warden'].config[:github_oauth_domain]}/user", :params => {:access_token => token})
   end
 
   def callback_url
